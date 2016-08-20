@@ -1,5 +1,4 @@
 var React = require('react');
-var PropTypes = React.PropTypes;
 var ConfirmBattle = require('../components/ConfirmBattle');
 var githubHelpers = require('../utils/githubHelpers');
 
@@ -23,13 +22,13 @@ var ConfirmBattleContainer = React.createClass({
         })
       }.bind(this))
   },
-  handleInitiateBattle: function() {
-      this.context.router.push({
-          pathname: '/results',
-          state: {
-              playersInfo: this.state.playersInfo
-          }
-      })
+  handleInitiateBattle: function () {
+    this.context.router.push({
+      pathname: '/results',
+      state: {
+        playersInfo: this.state.playersInfo
+      }
+    })
   },
   render: function () {
     return (
@@ -40,12 +39,5 @@ var ConfirmBattleContainer = React.createClass({
     )
   }
 });
-
-ConfirmBattleContainer.propTypes = {
-    isLoading: PropTypes.bool.isRequired,
-    onInitiateBattle: PropTypes.isRequired,
-    playersInfo: PropTypes.isRequired
-}
-
 
 module.exports = ConfirmBattleContainer;
